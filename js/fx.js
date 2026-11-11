@@ -32,7 +32,7 @@ function size(){
   W=innerWidth;H=innerHeight;
   cv.width=W*D;cv.height=H*D;cv.style.width=W+'px';cv.style.height=H+'px';
   ctx.setTransform(D,0,0,D,0,0);
-  const n=Math.round(Math.min(460,Math.max(130,W*H/4000)));
+  const n=Math.round(Math.min(360,Math.max(120,W*H/4000)));
   stars=Array.from({length:n},mk);
   frame(performance.now(),true);
 }
@@ -91,9 +91,19 @@ size();sync();
 /* ---- soft glow that follows the cursor ---- */
 if(fine&&!rm){
   const g=document.createElement('div');g.id='glow';document.body.append(g);
-  let gx=innerWidth/2,gy=innerHeight/2,px=gx,py=gy;
-  addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY},{passive:true});
-  (function f(){gx+=(px-gx)*.1;gy+=(py-gy)*.1;g.style.transform='translate3d('+gx.toFixed(1)+'px,'+gy.toFixed(1)+'px,0)';requestAnimationFrame(f)})();
+  let gx=innerWidth/2,gy=innerHeight/2,px=gx,py=gy,gr=0;
+  function f(){
+    gr=0;gx+=(px-gx)*.1;gy+=(py-gy)*.1;
+    g.style.transform='translate3d('+gx.toFixed(1)+'px,'+gy.toFixed(1)+'px,0)';
+    if(Math.abs(px-gx)>.1||Math.abs(py-gy)>.1)gr=requestAnimationFrame(f);
+    else{gx=px;gy=py}
+  }
+  function start(){if(!gr&&!document.hidden)gr=requestAnimationFrame(f)}
+  addEventListener('pointermove',e=>{px=e.clientX;py=e.clientY;start()},{passive:true});
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden&&gr){cancelAnimationFrame(gr);gr=0}
+    else if(!document.hidden&&(Math.abs(px-gx)>.1||Math.abs(py-gy)>.1))start();
+  });
 }
 
 /* ---- card spotlight ---- */

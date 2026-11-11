@@ -13,7 +13,7 @@ setTimeout(()=>wa.classList.add('tip'),2500);setTimeout(()=>wa.classList.remove(
 
 // 2. Gallery photos: tries jpg, jpeg, png, webp, avif; shows a placeholder if none exist
 const EX=['jpg','jpeg','png','webp','avif'];
-qa('img[data-g]').forEach(img=>{let i=0;img.addEventListener('error',()=>{i++;if(i<EX.length)img.src=img.dataset.g+'.'+EX[i];else img.classList.add('miss')});img.src=img.dataset.g+'.'+EX[0]});
+qa('img[data-g]').forEach(img=>{if(img.closest('.reel')){img.loading='lazy';img.decoding='async'}let i=0;img.addEventListener('error',()=>{i++;if(i<EX.length)img.src=img.dataset.g+'.'+EX[i];else img.classList.add('miss')});img.src=img.dataset.g+'.'+EX[0]});
 
 // 3. Reveal on scroll (gallery tiles, steps, tiles)
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
