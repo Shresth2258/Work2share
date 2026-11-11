@@ -278,8 +278,17 @@ if(fine&&!rm){
   },{threshold:.3}).observe(root);
   /* soft 3D tilt */
   if(!reduce&&matchMedia('(hover:hover)').matches){
-    stage.addEventListener('mousemove',e=>{const r=stage.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;frame.style.transform='rotateY('+(x*10).toFixed(2)+'deg) rotateX('+(-y*8).toFixed(2)+'deg)'});
-    stage.addEventListener('mouseleave',()=>{frame.style.transform=''});
+    let tilt=0,px=0,py=0;
+    stage.addEventListener('pointermove',e=>{
+      px=e.clientX;py=e.clientY;
+      if(tilt)return;
+      tilt=requestAnimationFrame(()=>{
+        tilt=0;
+        const r=stage.getBoundingClientRect(),x=(px-r.left)/r.width-.5,y=(py-r.top)/r.height-.5;
+        frame.style.transform='rotateY('+(x*10).toFixed(2)+'deg) rotateX('+(-y*8).toFixed(2)+'deg)';
+      });
+    });
+    stage.addEventListener('pointerleave',()=>{if(tilt)cancelAnimationFrame(tilt);tilt=0;frame.style.transform=''});
   }
 })();
 
