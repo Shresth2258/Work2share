@@ -1,0 +1,57 @@
+/* Desk Match */
+.mstage{position:relative;border-radius:18px;overflow:hidden;background:linear-gradient(180deg,#e9f6f3,#f7fbe8);padding:12px}
+.dk .mstage{background:linear-gradient(180deg,#14201e,#1d2618)}
+.mgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.mc{aspect-ratio:1/1.12;border:0;padding:0;background:none;cursor:pointer;perspective:600px;-webkit-tap-highlight-color:transparent}
+.mc i{position:absolute;inset:0}
+.mc{position:relative}
+.mc .in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.mc.on .in,.mc.ok .in{transform:rotateY(180deg)}
+.mc .f,.mc .b{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;border-radius:14px;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.mc .b{background:var(--teal2);color:#fff;font-size:1.2rem;font-weight:800;box-shadow:inset 0 0 0 3px #ffffff33}
+.mc .f{background:var(--card);border:2px solid var(--grey);font-size:clamp(1.6rem,6vw,2.4rem);transform:rotateY(180deg)}
+.mc.ok .f{border-color:var(--teal2);background:color-mix(in srgb,var(--teal2) 16%,var(--card));animation:mpop .5s}
+.mc.bad .f{border-color:#d64545;animation:mshake .4s}
+.mc:focus-visible{outline:3px solid var(--teal2);outline-offset:2px;border-radius:16px}
+.mc:disabled{cursor:default}
+@keyframes mpop{50%{transform:rotateY(180deg) scale(1.12)}}
+@keyframes mshake{25%{transform:rotateY(180deg) translateX(-5px)}75%{transform:rotateY(180deg) translateX(5px)}}
+.mpg .gbox{width:min(100%,460px)}
+.gov .mstars{font-size:1.6rem;letter-spacing:.1em;color:#e6b422}
+.gov .mcode{display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center}
+.gov .mcode code{font:800 1.15rem/1 Montserrat,monospace;letter-spacing:.1em;background:var(--bg);border:2px dashed var(--teal2);border-radius:12px;padding:12px 16px}
+.gov .mwin{color:var(--teal2);font-weight:800;font-size:2.2rem;line-height:1}
+.gov small.mfine{font-size:.72rem;color:var(--mute);max-width:260px;line-height:1.4}
+.mconf{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:4}
+.mconf s{position:absolute;top:-10px;width:8px;height:12px;border-radius:2px;animation:mfall linear forwards}
+@keyframes mfall{to{transform:translateY(560px) rotate(540deg);opacity:.9}}
+@media(prefers-reduced-motion:reduce){.mc .in{transition:none}.mc.ok .f,.mc.bad .f{animation:none}.mconf{display:none}}
+@media(max-width:960px){.mpg .gcol{order:-1}}
+/* compact result overlay so it always fits the board */
+#mov{gap:6px;padding:14px}
+#mov .ge{font-size:2.2rem}
+#mov h3{font-size:1.35rem}
+#mov .mwin{font-size:1.8rem}
+#mov .mstars{font-size:1.3rem;line-height:1}
+#mov p{font-size:.82rem;margin:0}
+#mov .mcode code{font-size:1rem;padding:9px 12px}
+#mov .gb{margin-top:2px}
+#mov .btn{padding:10px 18px;font-size:.82rem}
+#mov .btn.wa-b{background:#1faa59;color:#fff}
+
+/* v8: chances pill, player form, penalty flash, score */
+.mchance{margin:0 8px 10px;padding:7px 12px;border-radius:12px;font-size:.76rem;font-weight:700;text-align:center;background:#e6b42226;border:1.5px solid #e6b422;line-height:1.35}
+.mchance.claimed{background:color-mix(in srgb,var(--teal2) 14%,var(--card));border-color:var(--teal2)}
+.mchance.over{background:transparent;border-color:var(--grey);color:var(--mute)}
+.ghud div.pen b{color:#d64545;animation:mpen .4s}
+@keyframes mpen{25%{transform:translateX(-4px)}75%{transform:translateX(4px)}}
+.mstage{min-height:360px}
+.gform{display:grid;gap:8px;width:100%;max-width:260px}
+.gform input{font:600 .9rem Montserrat,sans-serif;padding:11px 14px;border-radius:12px;border:1.5px solid var(--grey);background:var(--bg);color:var(--ink);width:100%;box-sizing:border-box}
+.gform input:focus{outline:2px solid var(--teal2);border-color:transparent}
+.gform .btn{justify-self:center}
+.gerr{color:#d64545!important;font-size:.78rem!important;font-weight:600}
+#mov .mscore{font-size:2.2rem;font-weight:800;color:var(--teal2);line-height:1}
+#mov p.gbeat{font-weight:700;color:var(--ink)}
+#mov small.mfine{font-size:.7rem;color:var(--mute);max-width:270px;line-height:1.4}
+#mov small.mfine a{color:var(--teal2);font-weight:700}

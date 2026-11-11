@@ -1,0 +1,34 @@
+/* Day-to-night section */
+.sk-sec{padding:110px 0}
+.sk{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(30px,5vw,70px);align-items:center}
+.sk-l .amh{display:block;margin-bottom:34px}.sk-l .amh p{margin-top:18px;max-width:420px}
+.sk-scene{position:relative;border-radius:28px;overflow:hidden;aspect-ratio:760/600;background:#0b1530;box-shadow:0 30px 70px #0a746633}
+.sk-scene svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.sk-time{position:absolute;left:clamp(16px,3vw,30px);bottom:clamp(12px,2.2vw,24px);color:#fff;text-shadow:0 2px 14px #0006;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.sk-time b{font-size:clamp(1.8rem,5vw,3.4rem);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.sk-time span{font-size:clamp(.8rem,1.4vw,1rem);font-weight:500;opacity:.9}
+.sk-cl{fill:#fff;opacity:.75;transition:opacity .8s;animation:skd 60s linear infinite alternate}
+.sk-c2{animation-duration:80s;animation-direction:alternate-reverse}
+@keyframes skd{to{transform:translateX(90px)}}
+.night .sk-cl{opacity:.1}
+.sk-sky rect{fill:#0f5d56;opacity:.4;transition:opacity .8s}
+.night .sk-sky rect{opacity:.9;fill:#0a2f33}
+.sk-w{fill:#a9dcd6;transition:fill .7s}
+.night .sk-w.l{fill:#ffd66b;filter:drop-shadow(0 0 5px #ffd66b99)}
+.night .sk-w{fill:#12383a}
+.night .sk-w.l{fill:#ffd66b}
+.sk-stars circle{fill:#fff}
+.sk-stars .tw{animation:skt 3s ease-in-out infinite alternate}
+@keyframes skt{from{opacity:.3}to{opacity:1}}
+.sk-txt{min-height:104px;margin-bottom:22px}
+.sk-txt h3{font-size:clamp(1.4rem,2.6vw,2rem);font-weight:800;letter-spacing:-.02em;transition:opacity .35s}
+.sk-txt p{margin-top:8px;color:var(--mute);max-width:460px;transition:opacity .35s}
+.sk-txt.sw h3,.sk-txt.sw p{opacity:0}
+.sk-ctl{display:grid;gap:18px}
+.sk-chips{display:flex;gap:10px;flex-wrap:wrap}
+.sk-chips button{font:500 .88rem Montserrat,system-ui,sans-serif;padding:10px 18px;border-radius:99px;border:1px solid var(--grey);background:var(--card);color:var(--ink);cursor:pointer;transition:background .3s,color .3s,transform .3s}
+.sk-chips button:hover{transform:translateY(-2px)}
+.sk-chips button.on{background:var(--teal);border-color:var(--teal);color:#fff}
+#skR{width:100%;accent-color:var(--teal2);height:28px;cursor:pointer}
+@media(max-width:900px){.sk{grid-template-columns:1fr;gap:26px}.sk-l{display:contents}.sk-l .amh{order:1;margin-bottom:0}.sk-scene{order:2}.sk-txt{order:3;min-height:96px;margin:0}.sk-ctl{order:4}.sk-time b{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){.sk-cl,.sk-stars .tw{animation:none}}

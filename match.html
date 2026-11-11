@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Play Desk Match by Work2Share. Match all 10 pairs in 75 seconds and win 5% off your first booking.">
+<title>Desk Match: Win 5% Off – Work2Share</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem('w2sTheme')==='dark')document.documentElement.classList.add('dk')}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fx.css">
+<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="css/game.css">
+<link rel="stylesheet" href="css/match.css">
+</head>
+<body class="pg gpg mpg">
+<div id="bar"></div>
+<header id="hd"><div class="nav">
+<a class="logo" href="index.html" aria-label="Work2Share home"><img src="assets/logo.webp" alt="Work2Share"></a>
+<ul class="pills" id="pl"><li><a href="about.html">About Us</a></li><li class="dd"><a href="index.html#offer">Solutions</a><ul class="dm"><li><a href="coworking.html">Coworking</a></li><li><a href="virtual-office.html">Virtual Office</a></li><li><a href="meeting-rooms.html">Meeting &amp; Conference Rooms</a></li></ul></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html#location">Location</a></li><li><a href="contact.html">Contact</a></li></ul>
+<div style="display:flex;gap:10px;align-items:center"><button class="tog" id="th" aria-label="Toggle theme">◐</button><a class="btn cta" href="https://wa.me/918383963820?text=Hi%20Work2Share,%20I%20would%20like%20to%20know%20more" target="_blank" rel="noopener"><span>Connect with us</span></a><button class="tog burger" id="bg" aria-label="Menu">☰</button></div>
+</div></header>
+<main>
+<section class="game mgame" id="game"><div class="wrap gw">
+<div><nav class="crumb gcrumb"><a href="game.html">← Back to Desk Rush</a></nav><span class="eyebrow">PLAY &amp; WIN</span><h1 class="gh1">Match them all, <em>win 5% off.</em></h1>
+<p class="gmp">Flip the cards and find all 10 pairs of workspace essentials in 75 seconds. Every wrong match costs you 2 seconds. Win within your 3 chances and unlock a 5% off code for your first booking.</p>
+<ul class="gl"><li><b>🃏</b><div><strong>Flip two cards at a time</strong><span>Same picture? It stays open. Different? They flip back, so remember where they are.</span></div></li><li><b>⏱️</b><div><strong>75 seconds, and mistakes cost time</strong><span>Find all 10 pairs before time runs out. Each wrong match takes 2 seconds off the clock.</span></div></li><li><b>🎁</b><div><strong>3 chances to win 5% off</strong><span>Create your player ID with your name and mobile number. You get 3 tries at the offer, and one offer per number. After that, keep playing for your best score.</span></div></li></ul>
+<div class="gref mterms"><div class="gref-t"><b>🎁 Win Desk Match, get 5% off</b><span>One offer per mobile number, 3 chances, valid on your first booking. Cannot be combined with the 7% referral offer. Terms apply.</span></div>
+<a class="btn gh" href="game.html"><span>Or play Desk Rush &amp; refer a friend for 7%</span></a></div>
+</div>
+<div class="gcol"><div class="gbox" id="mbox"><div class="ghud"><div><small>Pairs</small><b id="mPairs">0/10</b></div><div><small>Time</small><b id="mTime">75</b></div><div><small>Moves</small><b id="mMoves">0</b></div><div><small>Best</small><b id="mBest">–</b></div></div>
+<p class="mchance" id="mChance" aria-live="polite"></p>
+<div class="mstage"><div class="mgrid" id="mgrid" role="group" aria-label="Memory cards"></div>
+<div class="gov" id="mov"><div class="ge">🃏</div><h3>Desk Match</h3><p>Find all 10 pairs in 75 seconds to win 5% off. Wrong match = -2 seconds. The timer starts on your first flip.</p><div class="gb"><button class="btn" id="mStart" type="button"><span>Start game</span></button></div></div></div></div>
+<p class="gnote">Tap a card to flip it.</p></div>
+</div></section>
+</main>
+<script src="js/page.js"></script>
+<script src="js/common.js"></script>
+<script src="js/match.js"></script>
+</body>
+</html>

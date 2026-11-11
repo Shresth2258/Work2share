@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Play Desk Rush by Work2Share, a 40 second game. Refer a friend and you both get 7% off your first booking.">
+<title>Desk Rush: Play &amp; Refer – Work2Share</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<script>try{if(sessionStorage.getItem('w2sTheme')==='dark')document.documentElement.classList.add('dk')}catch(e){}</script>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fx.css">
+<link rel="stylesheet" href="css/modal.css">
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body class="pg gpg">
+<div id="bar"></div>
+<header id="hd"><div class="nav">
+<a class="logo" href="index.html" aria-label="Work2Share home"><img src="assets/logo.webp" alt="Work2Share"></a>
+<ul class="pills" id="pl"><li><a href="about.html">About Us</a></li><li class="dd"><a href="index.html#offer">Solutions</a><ul class="dm"><li><a href="coworking.html">Coworking</a></li><li><a href="virtual-office.html">Virtual Office</a></li><li><a href="meeting-rooms.html">Meeting &amp; Conference Rooms</a></li></ul></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html#location">Location</a></li><li><a href="contact.html">Contact</a></li></ul>
+<div style="display:flex;gap:10px;align-items:center"><button class="tog" id="th" aria-label="Toggle theme">◐</button><a class="btn cta" href="https://wa.me/918383963820?text=Hi%20Work2Share,%20I%20would%20like%20to%20know%20more" target="_blank" rel="noopener"><span>Connect with us</span></a><button class="tog burger" id="bg" aria-label="Menu">☰</button></div>
+</div></header>
+<main>
+<section class="game" id="game"><div class="wrap gw">
+<div><nav class="crumb gcrumb"><a href="index.html">← Back to website</a></nav><span class="eyebrow">PLAY &amp; REFER</span><h1 class="gh1">Think you can <em>out-work</em> the rush?</h1>
+<p class="gmp">Play Desk Rush: 40 seconds, one desk, endless ideas. Catch what helps you do your best work, dodge the distractions and survive Rush Hour. Then refer a friend and you both get 7% off.</p>
+<ul class="gl"><li><b>💡</b><div><strong>Catch ideas, coffee and Wi-Fi</strong><span>Every good catch scores. Chain 5 in a row to raise your multiplier.</span></div></li><li><b>📱</b><div><strong>Dodge the distractions</strong><span>Phones, notifications and the afternoon slump cost you points and your combo.</span></div></li><li><b>🧲</b><div><strong>Power-ups and Rush Hour</strong><span>🧲 pulls ideas to you, 🛡️ blocks a distraction, ⏰ adds 4 seconds. The last 10 seconds are double points.</span></div></li></ul>
+<div class="gref"><div class="gref-t"><b>🎁 Refer a friend, get 7% off</b><span>Share your link. When your friend books through it, you both get 7% off. Applies to the first booking, terms apply.</span></div>
+<p class="gref-in" id="refIn" hidden>🎁 You were invited with code <b id="refFrom"></b>. <a id="refGet" target="_blank" rel="noopener" href="#">Claim your 7% off</a></p>
+<div class="gref-c"><code id="refCode">W2S-•••••</code><button class="btn gh" id="refCopy" type="button"><span>Copy link</span></button><a class="btn wa-b" id="refWa" target="_blank" rel="noopener" href="#"><span>Share on WhatsApp</span></a></div>
+<a class="btn gh" href="match.html"><span>🃏 Play Desk Match, win 5% off</span></a>
+<a class="gref-s" id="refClaim" target="_blank" rel="noopener" href="#">Friend already booked? Claim your 7%</a></div>
+</div>
+<div class="gcol"><div class="gbox" id="gbox"><div class="ghud"><div><small>Score</small><b id="gScore">0</b></div><div><small>Time</small><b id="gTime">40</b></div><div class="gc"><small>Combo</small><b id="gCombo">x1</b></div><div><small>Best</small><b id="gBest">0</b></div></div>
+<div class="gstage"><button class="gmute" id="gMute" type="button" aria-label="Turn sound off">🔊</button><canvas id="gcv" width="360" height="520" aria-label="Desk Rush game. Move your desk left and right to catch good items."></canvas>
+<div class="gov" id="gov"><div class="ge">🧑‍💻</div><h3>Desk Rush</h3><p>Slide to move your desk, or use arrow keys. Grab 🧲 🛡️ ⏰ power-ups. The last 10 seconds are x2!</p><div class="gb"><button class="btn" id="gStart" type="button"><span>Start game</span></button></div></div></div></div>
+<p class="gnote">Move your finger or mouse across the game to steer.</p></div>
+</div></section>
+</main>
+<script src="js/page.js"></script>
+<script src="js/common.js"></script>
+<script src="js/refer.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
